@@ -1,18 +1,26 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Command } from "lucide-react";
+import { RemoveFormatting, Activity } from "lucide-react";
+import { redirect } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import UserAuthForm from "@/components/auth-form";
+import { getSession } from "../supabase-server";
 
 export const metadata: Metadata = {
   title: "Authentication",
   description: "Authentication forms built using the components.",
 };
 
-export default function AuthenticationPage() {
+export default async function AuthenticationPage() {
+  const session = await getSession();
+
+  if (session) {
+    return redirect("/account");
+  }
+
   return (
     <>
       <div className="md:hidden">
@@ -33,13 +41,13 @@ export default function AuthenticationPage() {
       </div>
       <div className="container relative hidden h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
         <Link
-          href="/auth"
+          href="./auth/signup"
           className={cn(
             buttonVariants({ variant: "ghost", size: "sm" }),
             "absolute right-4 top-4 md:right-8 md:top-8"
           )}
         >
-          Already have an account ? Login
+          Login
         </Link>
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
           <div
@@ -50,7 +58,8 @@ export default function AuthenticationPage() {
             }}
           />
           <div className="relative z-20 flex items-center text-lg font-medium">
-            <Command className="mr-2 h-6 w-6" /> Acme Inc
+            <Activity className="h-6 w-6" />
+            <RemoveFormatting className="mr-2 h-6 w-6" /> Vertex
           </div>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
@@ -67,10 +76,10 @@ export default function AuthenticationPage() {
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="text-2xl font-semibold tracking-tight">
-                Create an account
+                Sign in with Magic Link
               </h1>
               <p className="text-sm text-muted-foreground">
-                Enter your email below to create your account
+                Enter your email below to connect
               </p>
             </div>
             <UserAuthForm />
