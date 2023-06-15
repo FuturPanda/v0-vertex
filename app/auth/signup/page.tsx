@@ -5,7 +5,7 @@ import { Command } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import UserAuthForm from "@/components/auth-form";
+import { UserAuthForm } from "@/components/auth-form";
 
 export const metadata: Metadata = {
   title: "Authentication",
