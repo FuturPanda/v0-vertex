@@ -21,7 +21,7 @@ export function UserNav({
   email,
   session,
 }: {
-  email: string;
+  email: string | undefined;
   session: Session | null;
 }) {
   const supabase = createClientComponentClient();

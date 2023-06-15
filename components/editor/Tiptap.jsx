@@ -9,7 +9,7 @@ import * as Y from "yjs";
 import { WebrtcProvider } from "y-webrtc";
 import { useState } from "react";
 
-import DateStampComponent from "./editor/Extension.js";
+import DateStampComponent from "./Extension";
 
 // const ydoc = new Y.Doc();
 // const provider = new WebrtcProvider("tiptap-collaboration-extension", ydoc);

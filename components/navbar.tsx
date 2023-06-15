@@ -8,7 +8,7 @@ export default function NavBar({
   email,
   session,
 }: {
-  email: string;
+  email: string | undefined;
   session: Session | null;
 }) {
   return (

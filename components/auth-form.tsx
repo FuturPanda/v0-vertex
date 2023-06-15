@@ -28,7 +28,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
   const router = useRouter();
 
-  async function onSubmit(event: React.SyntheticEvent) {
+  async function onSubmit(event: any) {
     event.preventDefault();
     setIsLoading(true);
     const email = event.target[0].value;

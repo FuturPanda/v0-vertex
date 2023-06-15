@@ -2,7 +2,7 @@ import { NodeViewWrapper } from "@tiptap/react";
 import React, { useCallback, useEffect, useState } from "react";
 const { DateTime } = require("luxon");
 
-export default (props) => {
+export const DateStampComponent = (props: any) => {
   const today = DateTime.now();
   const dateStamp = `${today.year}${today.month}${today.day}`;
   console.log(props);
@@ -40,8 +40,8 @@ export default (props) => {
 
     props.editor
       .chain()
-      .insertContentAt(endPos, { type: "paragraph", content: "Bouyahhh" })
-      .focus(endPos)
+      .insertContentAt("endPos", { type: "paragraph", content: "Bouyahhh" })
+      .focus("endPos")
       .run();
   };
 
