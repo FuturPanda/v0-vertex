@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import UserAuthForm from "@/components/auth-form";
+import { UserAuthForm } from "@/components/auth-form";
 import { getSession } from "../supabase-server";
 
 export const metadata: Metadata = {

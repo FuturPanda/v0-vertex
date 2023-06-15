@@ -22,10 +22,7 @@ async function signInWithEmail(email: string) {
   });
 }
 
-export default function UserAuthForm({
-  className,
-  ...props
-}: UserAuthFormProps) {
+export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [email, setEmail] = React.useState<string>("");
 
