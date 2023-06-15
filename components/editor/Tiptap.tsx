@@ -50,17 +50,17 @@ const Tiptap = ({ editorState, setEditorState }) => {
     // }
   };
 
-  useEffect(() => {
-    console.log(editor);
-    // setEditorState(editor);
-    editor
-      .chain()
-      .focus("end")
-      .insertContent({ type: "dateStampComponent" })
-      // .scrollIntoView()
-      .focus("end")
-      .run();
-  }, []);
+  // useEffect(() => {
+  //   console.log(editor);
+  //   // setEditorState(editor);
+  //   editor
+  //     .chain()
+  //     .focus("end")
+  //     .insertContent({ type: "dateStampComponent" })
+  //     // .scrollIntoView()
+  //     .focus("end")
+  //     .run();
+  // }, []);
   return (
     <>
       <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
