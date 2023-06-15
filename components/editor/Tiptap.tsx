@@ -34,6 +34,7 @@ const Tiptap = ({ editorState, setEditorState }) => {
     onUpdate: ({ editor }) => {
       const json = editor.getJSON();
       // send the content to an API here
+      // ifejiof
     },
   });
 
